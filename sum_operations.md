@@ -101,7 +101,9 @@ To compute \(\sum_{n=1}^{\infty} n \left(\frac{1}{2}\right)^n\):
 | **Series Type**              | **Sum/Result**                                | **Key Trick/Approach**                                         | **Conditions/Comments**                |
 |-----------------------------|---------------------------------------------|---------------------------------------------------------------|----------------------------------------|
 | Geometric                   | \(\sum_{n=0}^\infty r^n = \frac{1}{1-r}\)  | Identify pattern \(1 + r + r^2 + \cdots\)                     | \(\|r\| < 1\)                          |
+| Geometric (negative exponent, n≥0)    | \(\sum_{n=0}^\infty r^{-n} = \frac{r}{r - 1}\)  | Pattern: \(1 + r^{-1} + r^{-2} + \cdots\)  | \(r \in (-\infty, -1) \cup (1, \infty)\)  |
 | Geometric (shifted)                   | \(\sum_{n=1}^\infty r^n = \frac{r}{1-r}\)  | Identify pattern \( r + r^2 + \cdots\)                     | a∈(0,1)                          |
+| Geometric (shifted, neg)  | \(\sum_{n=1}^\infty r^{-n} = \frac{1}{r - 1}\)  | Pattern: \(r^{-1} + r^{-2} + \cdots\)  | \(r \in (-\infty, -1) \cup (1, \infty)\)  |
 | Geometric (general)                   | \(\sum_{n=0}^\infty ar^n = \frac{a}{1-r}\)  | First term is a. Common ratio is r.                    | \(\|r\| < 1\)                          |
 | Arith.-Geometric Series       | \(\sum_{n=1}^\infty nr^n = \frac{r}{(1-r)^2}\)  | -                    | $\$                          |
 | Arith.-Geometric Series       | \(\sum_{n=1}^\infty n^2r^n = \frac{r(1+r)}{(1-r)^3}\)  | -                    | $\$                          |
@@ -109,7 +111,8 @@ To compute \(\sum_{n=1}^{\infty} n \left(\frac{1}{2}\right)^n\):
 | \(p\)-series                | \(\sum_{n=1}^\infty \frac{1}{n^p}\) converges if \(p > 1\) | Compare to integral \(\int_1^\infty x^{-p}dx\)               | Diverges if \(p \leq 1\)               |
 | Alternating Series          | \(\sum_{n=1}^\infty (-1)^{n+1}\frac{1}{n} = \ln 2\) | Leibniz test: terms \(\downarrow\) to 0                       | Error \(\leq \|a_{n+1}\|\)             |
 | Basel Problem (\(\zeta(2)\))| \(\sum_{n=1}^\infty \frac{1}{n^2} = \frac{\pi^2}{6}\) | Fourier series of \(f(x)=x^2\) or Parseval's theorem         | Generalizes to \(\zeta(2k)\)           |
-| Exponential                 | \(\sum_{n=0}^\infty \frac{x^n}{n!} = e^x\)  | Taylor series expansion at \(x=0\)                            | Converges \(\forall x \in \mathbb{C}\) |
+| Exponential                 | \(\sum_{n=0}^\infty \frac{x^n}{n!} = e^x\)  | Taylor series expansion at \(x=0\)                            | 
+| Exponential (Reciprocal Factorial) | \(\sum_{n=0}^\infty \frac{1}{n!} = e\) | Taylor series of \(e^x\) evaluated at \(x=1\) | Core definition of \(e\); converges absolutely |Converges \(\forall x \in \mathbb{C}\) |
 | Harmonic Variant            | \(\sum_{n=1}^\infty \frac{1}{n(n+1)} = 1\)  | Partial fractions \(\frac{1}{n} - \frac{1}{n+1}\)             | Telescopes completely                  |
 | Generating Function         | \(\sum_{n=0}^\infty \binom{2n}{n}x^n = \frac{1}{\sqrt{1-4x}}\) | Binomial theorem or hypergeometric identities              | \(\|x\| < \frac{1}{4}\)                |
 | Leibniz (Arctangent)        | \(\sum_{n=0}^\infty \frac{(-1)^n}{2n+1} = \frac{\pi}{4}\) | Integrate \(\sum (-1)^n x^{2n} = \frac{1}{1+x^2}\)            | \(\tan^{-1}(1)\) special case          |
