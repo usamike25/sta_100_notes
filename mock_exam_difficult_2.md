@@ -1,20 +1,4 @@
-***
 
-**Universität Zürich**
-**FS 2025**
-**STA110 Introduction to Probability**
-**Advanced Mock Exam**
-
-* **The exam is open book** — the use of AI or any form of communication is not allowed.
-* Please make sure that every paper you hand in has your **name and student number** on it.
-* Unless otherwise stated, **full points will not be awarded for solutions without a clear explanation**.
-* Do not use a pencil or pens in red or green ink.
-
-**Last Name:**
-**First Name:**
-**Student Number:**
-
-***
 
 ### **Notation**
 

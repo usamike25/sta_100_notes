@@ -111,3 +111,5 @@ $$
 3. **Variation 3**: Exponential decay segment requiring advanced integration.  
 4. **Variation 4**: Trigonometric functions and transcendental inverse.  
 5. **Variation 5**: Elliptic integral in CDF, non-algebraic inverse, and asymmetric support.  
+
+
