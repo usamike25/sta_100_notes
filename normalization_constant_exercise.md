@@ -220,3 +220,88 @@ C_N = \frac{1}{N^2(N+1)}
 2. **Arithmetic Series**: \( \sum_{k=1}^n k = \frac{n(n+1)}{2} \), \( \sum k^2 = \frac{n(n+1)(2n+1)}{6} \).  
 3. **Case Handling**: Separate solutions for even/odd \( N \).  
 4. **Dimensionality**: Extend logic to joint PMFs/PDFs with multivariate summations/integrals.
+
+---------------
+# Normalization Constant Exercises for PMF/PDF 3
+### Variation 1 (Simplest)  
+**Exercise (2 points)**  
+Let \(X\) be a discrete random variable with support \(\{1, 2\}\). Suppose its probability mass function is given by \(P(X = k) = C \cdot k\) for \(k = 1, 2\). Find the constant \(C\).
+
+> **Solution**  
+> \(\sum_{k=1}^{2} P(X=k) = 1\)  
+> \(C \cdot 1 + C \cdot 2 = 1\)  
+> \(3C = 1\)  
+> \(C = \frac{1}{3}\)
+
+---
+
+### Variation 2 (Slightly Harder)  
+**Exercise (4 points)**  
+Let \(X\) be a discrete random variable with support \(\{1, 2, 3\}\). The probability mass function is \(P(X = k) = C_3 \cdot |k - 1.5|\) for \(k = 1, 2, 3\). Find \(C_3\).
+
+> **Solution**  
+> Values: \(|1-1.5| = 0.5\), \(|2-1.5| = 0.5\), \(|3-1.5| = 1.5\)  
+> Sum: \(0.5 + 0.5 + 1.5 = 2.5\)  
+> \(C_3 \cdot 2.5 = 1\)  
+> \(C_3 = \frac{2}{5}\)
+
+---
+
+### Variation 3 (Moderate)  
+**Exercise (5 points)**  
+Let \(X\) be a discrete random variable with support \(\{1, 2, 3, 4\}\). The probability mass function is \(P(X = k) = C_4 \cdot \max(k, 5 - k)\). Find \(C_4\).
+
+> **Solution**  
+> Values:  
+> \(k=1: \max(1,4)=4\)  
+> \(k=2: \max(2,3)=3\)  
+> \(k=3: \max(3,2)=3\)  
+> \(k=4: \max(4,1)=4\)  
+> Sum: \(4+3+3+4=14\)  
+> \(C_4 \cdot 14 = 1\)  
+> \(C_4 = \frac{1}{14}\)
+
+---
+
+### Variation 4 (Challenging)  
+**Exercise (7 points)**  
+Let \(X\) be a discrete random variable with support \(\{1, \dots, N\}\), where \(N \geq 2\) is even. The probability mass function is \(P(X = k) = C_N \cdot \left| k - \frac{N}{2} \right|\). Find \(C_N\).
+
+> **Solution**  
+> Let \(m = N/2\)  
+> Sum splits:  
+> \(\sum_{k=1}^{m} (m - k) + \sum_{k=m+1}^{N} (k - m)\)  
+> First sum: \(\sum_{j=0}^{m-1} j = \frac{(m-1)m}{2}\)  
+> Second sum: \(\sum_{j=1}^{m} j = \frac{m(m+1)}{2}\)  
+> Total: \(\frac{(m-1)m}{2} + \frac{m(m+1)}{2} = m^2\)  
+> Substitute \(m = N/2\): Sum = \(N^2/4\)  
+> \(C_N \cdot \frac{N^2}{4} = 1\)  
+> \(C_N = \frac{4}{N^2}\)
+
+---
+
+### Variation 5 (Hardest)  
+**Exercise (9 points)**  
+Let \(X\) be a discrete random variable with support \(\{1, \dots, N\}\), where \(N \geq 4\) is even. The probability mass function is:  
+\[
+P(X = k) = C_N \cdot \left( \left| k - \frac{N}{2} \right| + 1 \right)
+\]  
+Find \(C_N\) and compute \(E[X]\).
+
+> **Solution**  
+> Let \(m = N/2\)  
+> **Part 1: Find \(C_N\)**  
+> Sum: \(\sum_{k=1}^{m} (m - k + 1) + \sum_{k=m+1}^{N} (k - m + 1)\)  
+> First sum: \(\sum_{i=1}^{m} i = \frac{m(m+1)}{2}\)  
+> Second sum: \(\sum_{j=1}^{m} (j + 1) = \frac{m(m+1)}{2} + m\)  
+> Total: \(\frac{m(m+1)}{2} + \frac{m(m+1)}{2} + m = m^2 + 2m\)  
+> Substitute \(m = N/2\): Sum = \(\frac{N^2}{4} + N\)  
+> \(C_N \cdot \left( \frac{N^2}{4} + N \right) = 1\)  
+> \(C_N = \frac{4}{N(N+4)}\)  
+>  
+> **Part 2: Compute \(E[X\)]**  
+> \(E[X] = C_N \left[ \sum_{k=1}^{m} k(m - k + 1) + \sum_{k=m+1}^{N} k(k - m + 1) \right]\)  
+> First sum: \((m+1)\sum k - \sum k^2 = \frac{m(m+1)^2}{2} - \frac{m(m+1)(2m+1)}{6} = \frac{m(m+1)(m+2)}{6}\)  
+> Second sum: \(\sum (j+m)(j+1) = \frac{m(5m^2+15m+4)}{6}\) (after substitution \(j = k-m\))  
+> Total inner sum: \(\frac{m(m+1)(m+2)}{6} + \frac{m(5m^2+15m+4)}{6} = m(m^2+3m+1)\)  
+> \(E[X] = \frac{4}{N(N+4)} \cdot \frac{N}{2} \left( \frac{N^2}{4} + \frac{3N}{2} + 1 \right) = \frac{N^2 + 6N + 4}{2(N+4)}\)
